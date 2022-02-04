@@ -27,7 +27,7 @@ console.log(fibo);
 
 */
 
-//---------fibonacci for first  10th  number (own practics)
+//---------fibonacci for first (9) 10th  number (own practics)
 /* 
 const fibonacci = [0, 1];
 for (let i = 2; i < 10; i++) {
@@ -37,3 +37,35 @@ for (let i = 2; i < 10; i++) {
 console.log('fibonacci', fibonacci); 
 */
 
+/* function fibonacciSeries(num) {
+    const fibo = [0, 1];
+    for (let i = 2; i <= num; i++) {
+        fibo[i] = fibo[i - 1] + fibo[i - 2];
+    }
+    return fibo;
+}
+
+const fiboSerice = fibonacciSeries([234]);
+console.log(fiboSerice); */
+
+
+
+//------------------ fibonnacci function Handle unexpected input using simple return------------------------
+
+function fibonacciSeries(num) {
+    if (typeof num != 'number') {        // if input is not a number then use the function work for handaling error
+        return 'please Give a Number'
+    }
+    if (num < 2) {                     // if input is not positive number then use the function work for handaling error
+        return "please give a Positive number  grater then 1";
+    }
+
+    const fibo = [0, 1];
+    for (let i = 2; i <= num; i++) {
+        fibo[i] = fibo[i - 1] + fibo[i - 2];
+    }
+    return fibo;
+}
+
+const fiboSerice = fibonacciSeries(3);
+console.log(fiboSerice);
